@@ -12,9 +12,14 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_crawler</sprite>
-    <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\Spear</sprite>
-    <sprite>sprites\Sword</sprite>
+    <sprites name="Player_Sprites">
+      <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_attack</sprite>
+    </sprites>
+    <sprite>sprites\spr_sword</sprite>
+    <sprites name="Item_Sprites">
+      <sprite>sprites\spr_spear</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
