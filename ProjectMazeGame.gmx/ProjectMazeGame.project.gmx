@@ -13,6 +13,8 @@
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_crawler</sprite>
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\Spear</sprite>
+    <sprite>sprites\Sword</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
