@@ -34,6 +34,9 @@ view_visible[0] = 0;
 view_visible[1] = 1;
 
 room_speed = 30;
+
+image_speed = 0;
+spd = 6;
 </string>
           </argument>
         </arguments>
@@ -64,25 +67,31 @@ dy = 0;
 divider = 1.0;
 
 if(keyboard_check(vk_up)){
-    dy = -6;
-    image_angle = 90;
-}
+    dy = -spd;
+    sprite_index = spr_player_up;
+    image_speed = .5;
+    }
 else if(keyboard_check(vk_down)){
-    dy = 6;
-    image_angle = 270;
-}
+    dy = spd;
+    sprite_index = spr_player_down;
+    image_speed = .5;
+    }
 else if(keyboard_check(vk_left)){
-    dx = -6;
-    image_angle = 180;
-}
+    dx = -spd;
+    sprite_index = spr_player_left;
+    image_speed = .5;
+    }
 else if(keyboard_check(vk_right)){
-    dx = 6;
-    image_angle = 0;
-}
-else if(keyboard_check(vk_up) or keyboard_check(vk_down) = true)
-{is_move_vert = true;}
-else if(keyboard_check(vk_left) or keyboard_check(vk_right) = true)
-{is_move_hori = true;}
+    dx = spd;
+    sprite_index = spr_player_right;
+    image_speed = .5;
+    }
+else if(keyboard_check(vk_up) or keyboard_check(vk_down) = true) {
+    is_move_vert = true;
+    }
+else if(keyboard_check(vk_left) or keyboard_check(vk_right) = true) {
+    is_move_hori = true;
+    }
 
 if(is_move_hori and is_move_vert = true)
 {divider = sqrt(2);}
@@ -91,6 +100,10 @@ else {divider = 1.0;}
 x += dx/divider;
 y += dy/divider;
 
+//Stop Animation
+if (!keyboard_check(vk_left) and !keyboard_check(vk_right) and !keyboard_check(vk_down) and !keyboard_check(vk_up)) {
+    image_speed = 0;
+    }
 </string>
           </argument>
         </arguments>
@@ -113,7 +126,40 @@ y += dy/divider;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_lifeCount.lifeCount += 200;
+            <string>///Movement
+is_move_vert = false;
+is_move_hori = false;
+dx = 0;
+dy = 0;
+divider = 1.0;
+
+if(keyboard_check(vk_up)){
+    dy += spd;
+    sprite_index = spr_player_up;
+}
+else if(keyboard_check(vk_down)){
+    dy -= spd;
+    sprite_index = spr_player_down;
+}
+else if(keyboard_check(vk_left)){
+    dx -= spd;
+    sprite_index = spr_player_left;
+}
+else if(keyboard_check(vk_right)){
+    dx += spd;
+    sprite_index = spr_player_right
+}
+else if(keyboard_check(vk_up) or keyboard_check(vk_down) = true)
+    {is_move_vert = true;}
+else if(keyboard_check(vk_left) or keyboard_check(vk_right) = true)
+    {is_move_hori = true;}
+
+if(is_move_hori and is_move_vert = true)
+    {divider = sqrt(2);}
+else {divider = 1.0;}
+
+x += dx/divider;
+y += dy/divider;
 </string>
           </argument>
         </arguments>
