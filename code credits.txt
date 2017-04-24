@@ -1,0 +1,5 @@
+creator / description / link
+
+Shaun Spalding / enemy Chase AI tutorial / https://www.youtube.com/watch?v=aNd_JotUOXE&t=129s
+
+shaun Spalding / pause menu / https://www.youtube.com/watch?annotation_id=annotation_3776362291&feature=iv&src_vid=pXvRcPObUbU&v=4eogzqTF_eo
